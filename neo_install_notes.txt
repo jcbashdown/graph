@@ -1,0 +1,3 @@
+WARNING: Max 1024 open files allowed, minimum of 40 000 recommended. See the Neo4j manual.
+WARNING! You are using an unsupported Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 7.
+

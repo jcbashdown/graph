@@ -134,26 +134,5 @@
 #
 #--for group build question on fly
 #
-def build_multi_user_argument(question, users)
-  multi_user_argument_builder = MultiUserArgumentBuilder.new(question, users)
-  multi_user_argument_builder.conclusion_level_argument
-end
-
-  multi_user_argument_builder.argument_for(node)
-  multi_user_argument_builder.question_summary(level=2)#anything that is conclusion in arg or child of conclusion in arg to zero based level
-
-class MultiUserArgumentBuilder
-
-  def initialize(question, users)
-    @users = ArgumentQueryUserCollection(users)
-  end
-
-  def conclusion_level_argument
-    #this should work for when no opinion?
-    users.conclusions...
-
-  end
-end
-#
 #--for all build question on fly 
 #

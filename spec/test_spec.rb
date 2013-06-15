@@ -5,7 +5,7 @@ def log_time(start)
   p Time.now - start 
 end
 
-describe 'testing' do
+describe 'testing', slow: true do
   it 'does things' do
     #use some kind of flag and instance variables so its a word to log, add to array of time with notes based on test name etc.
     start = Time.now

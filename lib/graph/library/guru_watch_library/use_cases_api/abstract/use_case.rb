@@ -1,5 +1,4 @@
 # -*- coding: UTF-8 -*-
-require 'ostruct'
 
 module UseCases
 

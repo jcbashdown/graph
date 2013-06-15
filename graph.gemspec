@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/graph-test/version', __FILE__)
+require File.expand_path('../lib/graph/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Jacob Ashdown"]
@@ -11,10 +11,11 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "graph-test"
+  gem.name          = "graph"
   gem.require_paths = ["lib"]
-  gem.version       = Graph::Test::VERSION
+  gem.version       = Graph::VERSION
 
   gem.add_dependency 'neography'
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'pry'
 end

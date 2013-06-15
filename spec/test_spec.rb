@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'neography'
 
 def log_time(start)
   p Time.now - start 

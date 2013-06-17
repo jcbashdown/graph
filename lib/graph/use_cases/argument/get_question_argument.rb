@@ -1,20 +1,23 @@
 module UseCases
-  class GetQuestionArgument < UseCase
+  module Argument
+    class GetQuestionArgument < UseCase
 
-    def call
-      raise "Please provide at least one user" if request.user_ids.empty?
-      build_argument(request.question_id, request.user_ids)
+      def call
+        raise "Please provide at least one user" if request.user_ids.empty?
+        Response.new(argument: build_argument(request.question_id, request.user_ids))
+      end
+
+      private
+
+      def build_argument(question_id, user_ids)
+        ArgumentBuilder.new(question_id,user_ids).conclusion_level_argument
+      end
+
     end
-
-    private
-    #this will move to helpers
-    def build_argument(question_id, user_ids)
-      ArgumentBuilder.new(question_id,user_ids).conclusion_level_argument
-    end
-
   end
 end
 
+#this will move to helpers? utils?
 class ArgumentBuilder
 
   attr_accessor :user_ids, :question_id

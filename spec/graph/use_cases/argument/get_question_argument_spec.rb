@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UseCases::GetQuestionArgument do
+describe UseCases::Argument::GetQuestionArgument do
 
   describe '#call' do
     let(:question_id) {123}
@@ -14,10 +14,12 @@ describe UseCases::GetQuestionArgument do
     context "when there are users" do
       let(:user_ids) {[1]}
       let(:argument) {stub(:argument)}
+      let(:response) {stub(:response)}
       let(:argument_builder) {stub(:argument_builder, :conclusion_level_argument => argument)}
       it "should return an argument from build_multi_user_argument" do
         ArgumentBuilder.should_receive(:new).with(question_id, user_ids).and_return argument_builder
-        subject.call.should == argument
+        UseCases::Response.should_receive(:new).with(argument:argument).and_return response
+        subject.call.should == response
       end
     end
   end

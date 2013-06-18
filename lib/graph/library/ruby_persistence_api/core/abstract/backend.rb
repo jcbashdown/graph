@@ -33,17 +33,11 @@ module RubyPersistenceAPI
       end
 
       def deduce_gateway_class_from(entity_class)
-        gateway_class_name = "#{entity_class.name.demodulize}Gateway"
-
-        backend_module = self.class.name.split("::")[0...-1].join("::").constantize
-
-        binding.pry
-        known_gateways = backend_module::Gateway.subclasses
-
-        gateway_class = known_gateways.find { |klass| klass.name.demodulize == gateway_class_name }
-
-        if gateway_class.nil?
-          raise StandardError.new("Cannot find #{gateway_class_name} among known gateways: #{known_gateways.map(&:name)}")
+        gateway_class_name ="Backends::ActiveMemory::#{entity_class.name.demodulize}Gateway"
+        begin
+          gateway_class = gateway_class_name.constantize
+        rescue
+          raise StandardError.new("Cannot find #{gateway_class_name}")
         end
 
         gateway_class

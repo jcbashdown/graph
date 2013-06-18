@@ -6,9 +6,9 @@ module Entities
 
     attribute :id, type: Integer
     attribute :title, type: String
-    attribute :private, type: Boolean
-    attribute :created_at, type: Time
-    attribute :updated_at, type: Time
+    attribute :private, type: Boolean, :default => false
+    attribute :created_at, type: DateTime
+    attribute :updated_at, type: DateTime
 
     validates :title, presence: true, uniqueness: true
 

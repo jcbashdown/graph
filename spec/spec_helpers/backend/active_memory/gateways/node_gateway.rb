@@ -6,7 +6,7 @@ module Backends
 
     class NodeGateway < RubyPersistenceAPI::ActiveMemory::Gateway
 
-      entity_class Entities::Node
+      entity_class ::Entities::Node
 
     end
 

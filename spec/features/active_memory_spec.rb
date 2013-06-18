@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe "testing storage" do
-  let(:node_attrs) {}
+  let(:node_attrs) {{
+    title: 'a node'
+  }}
   let(:db) do
     backend = RubyPersistenceAPI::ActiveMemory::Backend.new
     backend.connect!
@@ -9,8 +11,10 @@ describe "testing storage" do
   end
 
   describe "creating Node" do
-    node = Node.new(node_attrs)
-    db[node].save
+    it "should persist the node" do
+      node = Entities::Node.new(node_attrs)
+      db[node].save
+    end
   end
 
 end

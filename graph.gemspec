@@ -16,6 +16,10 @@ Gem::Specification.new do |gem|
   gem.version       = Graph::VERSION
 
   gem.add_dependency 'neography'
+  gem.add_dependency 'active_attr'
+  gem.add_dependency 'activemodel'
+  gem.add_dependency 'activesupport'
+
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'pry'
 end

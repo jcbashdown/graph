@@ -37,6 +37,7 @@ module RubyPersistenceAPI
 
         backend_module = self.class.name.split("::")[0...-1].join("::").constantize
 
+        binding.pry
         known_gateways = backend_module::Gateway.subclasses
 
         gateway_class = known_gateways.find { |klass| klass.name.demodulize == gateway_class_name }

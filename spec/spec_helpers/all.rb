@@ -1,1 +1,1 @@
-require_relative '../backend/all'
+require_relative 'backend/all'

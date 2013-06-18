@@ -1,9 +1,9 @@
 require 'graph'
-require_relative '../spec_helpers/all'
 
 Dir[File.expand_path("../spec_helpers/*.rb", __FILE__)].each do |path_to_file|
   require path_to_file
 end
+require 'pry'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true

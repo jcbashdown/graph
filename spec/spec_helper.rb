@@ -1,4 +1,5 @@
 require 'graph'
+require_relative '../spec_helpers/all'
 
 Dir[File.expand_path("../spec_helpers/*.rb", __FILE__)].each do |path_to_file|
   require path_to_file

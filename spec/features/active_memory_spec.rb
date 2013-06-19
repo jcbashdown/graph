@@ -5,9 +5,7 @@ describe "testing storage" do
     title: 'a node'
   }}
   let(:db) do
-    backend = RubyPersistenceAPI::ActiveMemory::Backend.new
-    backend.connect!
-    backend
+    Graph.backend
   end
 
   describe "creating Node" do

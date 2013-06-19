@@ -16,8 +16,10 @@ describe UseCases::Argument::GetQuestionArgument do
       let(:argument) {stub(:argument)}
       let(:response) {stub(:response)}
       let(:argument_builder) {stub(:argument_builder, :conclusion_level_argument => argument)}
+      let(:argument_querier) {stub(:argument_querier)}
       it "should return an argument from build_multi_user_argument" do
-        ArgumentBuilder.should_receive(:new).with(question_id, user_ids).and_return argument_builder
+        ArgumentQuerier.should_receive(:new).with(subject.db).and_return argument_querier
+        ArgumentBuilder.should_receive(:new).with(question_id, user_ids, argument_querier).and_return argument_builder
         UseCases::Response.should_receive(:new).with(argument:argument).and_return response
         subject.call.should == response
       end

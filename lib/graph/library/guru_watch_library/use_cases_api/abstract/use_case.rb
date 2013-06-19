@@ -18,8 +18,7 @@ module UseCases
     private
 
     def self.db
-      return @db if @db
-      raise "No DB!"
+      @db ||= Graph.backend
     end
 
   end

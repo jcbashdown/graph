@@ -7,7 +7,7 @@ module UseCases
     attr_accessor :request, :db
 
     def initialize(request_or_hash = { }, db=nil)
-      @db = db || self.db
+      @db = db || self.class.db
       if request_or_hash.is_a?(Hash)
         self.request = Request.new(request_or_hash)
       else

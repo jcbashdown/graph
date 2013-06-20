@@ -6,4 +6,8 @@ class ArgumentQuerier
     @db = db
   end
 
+  def conclusions
+
+  end
+
 end

@@ -1,9 +1,12 @@
 class ArgumentBuilder
+  extend Forwardable
 
-  attr_accessor :user_ids, :question_id
+  def_delegators :@argument_querier, :conclusions
 
-  def initialize(question_id, user_ids)
-    #@users = ArgumentQueryUserCollection(users)
+  attr_accessor :user_ids, :question_id, :argument_querier
+
+  def initialize(question_id, user_ids, argument_querier)
+    @argument_querier = argument_querier
     @question_id = question_id
     @user_ids = user_ids
   end

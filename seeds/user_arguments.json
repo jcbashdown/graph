@@ -1,0 +1,103 @@
+{
+  "1":{
+    "questions":{
+      "tax question":{
+        "conclusions":[
+          "we need the tax code argued for in x report"
+        ]
+      }
+    },
+    "nodes":{
+      "we need the tax code argued for in x report":{
+        "body":[
+          "aspect one",
+          "aspect two",
+          "aspect three"
+        ],
+        "supporters":[
+          "aspect one",
+          "aspect two",
+          "aspect three"
+        ],
+        "opposers":[
+
+        ],
+        "composite":true
+      },
+      "aspect one":{
+        "body":[
+
+        ],
+        "supporters":[
+          "there is a study and there is a study supports aspect one"
+        ],
+        "opposers":[
+
+        ],
+        "composite":false
+      },
+      "aspect two":{
+        "body":[
+
+        ],
+        "supporters":[
+
+        ],
+        "opposers":[
+
+        ],
+        "composite":false
+      },
+      "aspect three":{
+        "body":[
+
+        ],
+        "supporters":[
+
+        ],
+        "opposers":[
+
+        ],
+        "composite":false
+      },
+      "there is a study and 6 supports 2":{
+        "body":[
+          "there is a study",
+          "6 supports 2"
+        ],
+        "supporters":[
+          "there is a study",
+          "6 supports 2"
+        ],
+        "opposers":[
+
+        ],
+        "composite":true
+      },
+      "there is a study":{
+        "body":[
+
+        ],
+        "supporters":[
+
+        ],
+        "opposers":[
+
+        ],
+        "composite":false
+      },
+      "6 supports 2":{
+        "body":[
+
+        ],
+        "supporters":[
+
+        ],
+        "opposers":[
+
+        ],
+        "composite":false
+      }
+    }
+  }
+}
